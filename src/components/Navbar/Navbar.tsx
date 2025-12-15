@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo.png"
 import { Link } from 'react-router-dom';
 import { FaRegHeart, FaRegUser } from 'react-icons/fa';
 import { IoBagOutline } from 'react-icons/io5';
+import Button from '../Button/Button';
 
 function Navbar() {
   return (
@@ -27,6 +28,15 @@ function Navbar() {
                 </div>
             </div>
         </nav>
+        <div className="header-btm">
+            <Button link='/women' size='sm' >
+                <span>WOMEN</span>
+            </Button>
+
+            <Button link='/men' size='sm' >
+                <span>MEN</span>
+            </Button>
+        </div>
     </header>
   )
 }

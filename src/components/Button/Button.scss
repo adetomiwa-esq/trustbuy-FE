@@ -1,0 +1,10 @@
+@use '../../scss/base/_mixins.scss' as *;
+@use '../../scss/abstracts/variables' as *;
+
+#link-btn {
+    // text-decoration: none;
+
+    &.button-sm {
+        @include button-base(white, $sec-color, 2px solid $sec-color, $sec-color, $pry-color);
+    }
+}
