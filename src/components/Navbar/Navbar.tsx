@@ -33,6 +33,11 @@ function Navbar() {
                 <span>WOMEN</span>
             </Button>
 
+            <div className="center">
+                <p>25% off 1000s of styles* <br />
+With code: SAVINGS</p>
+            </div>
+
             <Button link='/men' size='sm' >
                 <span>MEN</span>
             </Button>

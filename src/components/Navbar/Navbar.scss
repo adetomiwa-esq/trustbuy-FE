@@ -73,4 +73,16 @@
             }
         }
     }
+
+    .header-btm {
+        background-color: $sec-color;
+        display: flex;
+        padding: 10px 20px;
+        justify-content: space-between;
+        text-align: center;
+
+        .center {
+            font-weight: 600;
+        }
+    }
 }

@@ -1,0 +1,67 @@
+@use '../../scss/abstracts/variables' as *;
+
+#home {
+    .picture-split {
+        display: flex;
+        position: relative;
+
+        img {
+            max-width: 50%;
+            object-position: center;
+            // height: 75svh;
+            filter: brightness(50%);
+        }
+
+        .intro-h {
+            position: absolute;
+            width: 100%;
+            color: $pry-color;
+            top: 50%;
+            text-align: center;
+            font-size: 85px;
+            transform: translateY(-50%);
+            border: 1px ;
+        }
+
+        .store-buttons {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            bottom: 20px;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .biggest-labels {
+        padding-top: 80px;
+        .header {
+            color: rgba($sec-color, 0.8);
+            text-align: center;
+            font-size: 80px;
+            margin-bottom: 60px;
+        }
+
+        .label-map {
+            margin-bottom: 80px;
+        }
+
+        .top-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .top-labels a {
+            display: block;
+            width: 24%;
+        }
+
+        .top-labels a img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
