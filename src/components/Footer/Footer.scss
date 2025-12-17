@@ -1,0 +1,36 @@
+#footer {
+    background-color: #f8f8f8;
+    color: #666;
+    padding-top: 40px;
+    font-size: 14px;
+
+    .footer-links {
+        display: flex;
+    }
+
+    .links {
+        list-style: none;
+        width: 33.33%;
+        padding: 0 20px 60px 20px;
+    }
+
+    .links-h {
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .link {
+        line-height: 22px;
+        cursor: pointer;
+
+        &:hover {
+            color: #007aff;
+        }
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(201, 196, 196, 0.6);
+        padding: 5px 10px;
+    }
+}
