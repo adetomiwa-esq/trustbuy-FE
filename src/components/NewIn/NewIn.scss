@@ -1,0 +1,38 @@
+@use "../../scss/abstracts/variables" as *;
+
+#new-in {
+    padding: 40px 0;
+
+    .new-in-h {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .new-products {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .new-prod {
+        width: 25%;
+        display: block;
+        text-decoration: none;
+        color: $pry-color;
+        position: relative;
+        
+        img {
+            width: 100%;
+            filter: brightness(80%);
+        }
+
+        p {
+            position: absolute;
+            bottom: 10px;
+            font-weight: 600;
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+        }
+    }
+}
