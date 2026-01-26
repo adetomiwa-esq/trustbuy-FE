@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout"
 import Home from "../pages/Home/Home";
 import Men from "../pages/Men/Men";
 import Women from "../pages/Women/Women";
+import Product from "../pages/Product/Product";
 
 
 export const router = createBrowserRouter([
@@ -21,6 +22,11 @@ export const router = createBrowserRouter([
                     {
                         index: true,
                         element: <Men />,
+                    },
+
+                    {
+                        path: "product/:product-id",
+                        element: <Product />
                     }
                 ]
                 
