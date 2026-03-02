@@ -5,6 +5,8 @@ import Men from "../pages/Men/Men";
 import Women from "../pages/Women/Women";
 import Product from "../pages/Product/Product";
 import Register from "../pages/Register/Register";
+import Login from "../pages/Login/Login";
+import AdminLayout from "../layouts/AdminLayout/AdminLayout";
 
 
 export const router = createBrowserRouter([
@@ -40,12 +42,22 @@ export const router = createBrowserRouter([
             }
         ]
     },
+
+    {
+        path: "/admin",
+        element: <AdminLayout />,
+        children: [
+            {
+                index: true
+            }
+        ]
+    },
     {
         path: "/register",
         element: <Register />
     },
     {
         path: "/login",
-        element: <h1>Login</h1>
+        element: <Login />
     }
 ])
