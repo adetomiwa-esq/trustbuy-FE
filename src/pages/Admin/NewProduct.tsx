@@ -41,6 +41,8 @@ function NewProduct() {
       return updated;
     });
   };
+
+  
   return (
     <section className="new-product">
         <div className="admin-pg-header">
