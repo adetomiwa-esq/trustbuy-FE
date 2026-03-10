@@ -7,6 +7,7 @@ import Product from "../pages/Product/Product";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AdminLayout from "../layouts/AdminLayout/AdminLayout";
+import NewProduct from "../pages/Admin/NewProduct";
 
 
 export const router = createBrowserRouter([
@@ -48,7 +49,8 @@ export const router = createBrowserRouter([
         element: <AdminLayout />,
         children: [
             {
-                index: true
+                index: true,
+                element: <NewProduct />
             }
         ]
     },
