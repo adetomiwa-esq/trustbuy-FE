@@ -1,11 +1,28 @@
 import { Tag, TruckElectric, Waypoints } from 'lucide-react'
 import {} from 'react';
 import "./Login.scss"
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { userSchema, type UserFormData } from "../../validationSchema/userSchema"
 
 function Login() {
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm<UserFormData>({
+        resolver: zodResolver(userSchema)
+    })
+
+    const submitForm = (data: UserFormData) => {
+        alert("hello world!")
+        console.log(data);
+        console.log("hello"); 
+    }
   return (
     <main id="login-page">
-        <form action="" className="register-form">
+        <form className="register-form" onSubmit={handleSubmit(submitForm)}>
             <h1 className="form-header">Welcome back!</h1>
 
             <p className="form-intro-p">Enter your details to sign in</p>
@@ -33,12 +50,19 @@ function Login() {
             <section className="form-fields">
                 <div className="info-field">
                     <label htmlFor="">EMAIL:*</label>
-                    <input type="email" name="" placeholder='Please enter email address' id="" />
+                    <input type="email" {...register("email")} placeholder='Please enter email address' id="" />
+                    {
+                        errors.email && <p className="error-msg">{errors.email.message}</p>
+                    }
                 </div>
 
                 <div className="info-field">
                     <label htmlFor="">Password:*</label>
-                    <input type="password" name="" placeholder='**************' id="" />
+                    <input type="password" {...register("password")} placeholder='**************' id="" />
+
+                    {
+                        errors.password && <p className="error-msg">{errors.password.message}</p>
+                    }
                 </div>
             </section>
 
