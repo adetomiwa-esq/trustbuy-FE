@@ -1,4 +1,5 @@
 import CartItem from "../../components/CartItem/CartItem";
+import EmptyCart from "../../components/EmptyCart/EmptyCart";
 import { cartItems } from "../../mock/Cart";
 import "./Cart.scss";
 
@@ -14,12 +15,20 @@ const Cart = () => {
           </header>
 
           <div className="cart__content">
-            {cartItems.map((item) => (
-                <CartItem
-                    key={item.id}
-                    item={item}
-                />
-            ))}
+            {
+              cartItems.length === 0 ?
+
+              <EmptyCart />
+
+              :
+            
+              cartItems.map((item) => (
+                  <CartItem
+                      key={item.id}
+                      item={item}
+                  />
+              ))
+            }
           </div>
         </div>
 
