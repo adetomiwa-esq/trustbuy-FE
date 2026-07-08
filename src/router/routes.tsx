@@ -8,6 +8,7 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AdminLayout from "../layouts/AdminLayout/AdminLayout";
 import NewProduct from "../pages/Admin/NewProduct";
+import Cart from "../pages/Cart/Cart";
 
 
 export const router = createBrowserRouter([
@@ -40,6 +41,11 @@ export const router = createBrowserRouter([
                 path: "women",
                 element: <Women />
                 
+            },
+
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ]
     },
