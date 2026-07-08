@@ -5,12 +5,34 @@ import { Heart, Trash2 } from "lucide-react";
 import { formatCurrency } from "../../utils/currency";
 
 import type { CartItem as CartItemType } from "../../features/cart/types";
+import { useState } from "react";
+import QuantitySelector from "../QuantitySelector/QuantitySelector";
 
 interface CartItemProps {
     item: CartItemType;
 }
 
 const CartItem = ({ item }: CartItemProps) => {
+
+    const [quantity, setQuantity] = useState(item.quantity);
+
+    const increase = () => {
+        if(quantity < item.stock){
+
+            setQuantity(prev => prev + 1);
+
+        }
+    };
+
+    const decrease = () => {
+
+        if(quantity > 1){
+
+            setQuantity(prev => prev - 1);
+
+        }
+
+    };
 
     return (
 
@@ -37,20 +59,12 @@ const CartItem = ({ item }: CartItemProps) => {
                         <option>XL</option>
                     </select>
 
-                    <select defaultValue={item.quantity}>
-
-                        {Array.from(
-                            { length: item.stock },
-                            (_, i) => (
-
-                                <option key={i + 1}>
-                                    {i + 1}
-                                </option>
-
-                            )
-                        )}
-
-                    </select>
+                    <QuantitySelector
+                        quantity={quantity}
+                        max={item.stock}
+                        onIncrease={increase}
+                        onDecrease={decrease}
+                    />
 
                 </div>
 
