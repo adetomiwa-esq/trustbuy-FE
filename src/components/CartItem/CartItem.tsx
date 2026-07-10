@@ -5,8 +5,9 @@ import { Heart, Trash2 } from "lucide-react";
 import { formatCurrency } from "../../utils/currency";
 
 import type { CartItem as CartItemType } from "../../features/cart/types";
-import { useState } from "react";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
+import { useAppDispatch } from "../../hooks/redux";
+import { increaseQuantity, decreaseQuantity, removeItem } from "../../features/cart/CartSlice";
 
 interface CartItemProps {
     item: CartItemType;
@@ -14,25 +15,11 @@ interface CartItemProps {
 
 const CartItem = ({ item }: CartItemProps) => {
 
-    const [quantity, setQuantity] = useState(item.quantity);
+    // const [quantity, setQuantity] = useState(item.quantity);
 
-    const increase = () => {
-        if(quantity < item.stock){
+    const dispatch = useAppDispatch()
 
-            setQuantity(prev => prev + 1);
-
-        }
-    };
-
-    const decrease = () => {
-
-        if(quantity > 1){
-
-            setQuantity(prev => prev - 1);
-
-        }
-
-    };
+    
 
     return (
 
@@ -60,10 +47,14 @@ const CartItem = ({ item }: CartItemProps) => {
                     </select>
 
                     <QuantitySelector
-                        quantity={quantity}
+                        quantity={item.quantity}
                         max={item.stock}
-                        onIncrease={increase}
-                        onDecrease={decrease}
+                        onIncrease={() => {
+                            dispatch(increaseQuantity(item.id))
+                        }}
+                        onDecrease={() =>
+                            dispatch(decreaseQuantity(item.id))
+                        }
                     />
 
                 </div>
@@ -77,7 +68,10 @@ const CartItem = ({ item }: CartItemProps) => {
                             Save for later
                         </button>
 
-                        <button>
+                        <button onClick={() =>
+                                dispatch(removeItem(item.id))
+                            }
+                        >
                             <Trash2 size={18} />
                             Remove
                         </button>

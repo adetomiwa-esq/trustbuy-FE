@@ -1,9 +1,13 @@
 import CartItem from "../../components/CartItem/CartItem";
 import EmptyCart from "../../components/EmptyCart/EmptyCart";
-import { cartItems } from "../../mock/Cart";
+import { useAppSelector } from "../../hooks/redux";
+import { selectCartItems } from "../../features/cart/selectors";
 import "./Cart.scss";
 
 const Cart = () => {
+
+  const cartItems = useAppSelector(selectCartItems);
+  
   return (
     <section className="cart">
       <div className="cart__container">
