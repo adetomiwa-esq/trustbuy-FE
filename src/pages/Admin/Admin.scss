@@ -117,3 +117,140 @@
         font-weight: 500;
     }
 }
+
+.admin-products {
+    width:100%;
+    min-width:0;
+    min-height:100vh;
+    background:#fff;
+}
+
+.admin-products > p {
+    margin:24px;
+}
+
+.admin-pg-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.admin-pg-header p {
+    color:#666;
+    margin-top:6px;
+}
+
+.admin-primary-link {
+    background:#080879;
+    color:#fff;
+    padding:12px 18px;
+    text-decoration:none;
+    border-radius:4px;
+    white-space:nowrap;
+}
+
+.admin-table-wrap {
+    overflow-x:auto;
+    padding:24px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th,.admin-table td {
+    padding:14px 12px;
+    border-bottom:1px solid #e8e8e8;
+}
+
+.admin-table th {
+    background:#f7f7f7;
+    font-size:13px;
+}
+
+.admin-product-cell {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:200px;
+}
+
+.admin-product-cell img {
+    width: 48px;
+    height: 58px;
+    object-fit: cover;
+}
+
+.admin-actions {
+    display:flex;
+    gap:12px;
+}
+
+.admin-actions a,.admin-actions button {
+    border: 0;
+    background: none;
+    color: #080879;
+    cursor: pointer;
+    text-decoration: none;
+    font:inherit;
+}
+
+.admin-actions button {
+    color: #b42318;
+}
+
+.read-only-label {
+    color:#666;
+    font-size:13px;
+}
+
+.admin-error {
+    color: #b42318;
+    margin: 20px 24px;
+}
+
+.admin-empty {
+    padding: 35px 24px;
+    color: #666;
+}
+
+.admin-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.admin-logout {
+    margin: 25px 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border: 0;
+    background: transparent;
+    color:#fff;
+    cursor: pointer;
+}
+
+.new-product {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+}
+
+@media(max-width:700px) {
+    #admin-aside {
+        width:190px;
+        min-width:190px;
+    }
+    
+    .create-product-form {
+        padding: 20px;
+    }
+    
+    .admin-pg-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
