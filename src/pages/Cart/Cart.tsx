@@ -46,13 +46,9 @@ const discount =
           </div>
         </div>
 
-        <aside className="cart__right">
-          <CartSummary
-            subtotal={subtotal}
-            shipping={shipping}
-            discount={discount}
-          />
-        </aside>
+        {cartItems.length > 0 && <aside className="cart__right">
+          <CartSummary subtotal={subtotal} shipping={shipping} discount={discount} />
+        </aside>}
       </div>
     </section>
   );
