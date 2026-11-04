@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout"
+import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
 import Men from "../pages/Men/Men";
 import Women from "../pages/Women/Women";
@@ -8,7 +8,10 @@ import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
 import AdminLayout from "../layouts/AdminLayout/AdminLayout";
 import NewProduct from "../pages/Admin/NewProduct";
+import Products from "../pages/Admin/Products";
 import Cart from "../pages/Cart/Cart";
+import Checkout from "../pages/Cart/Checkout";
+import PaymentReturn from "../pages/Cart/PaymentReturn";
 
 
 export const router = createBrowserRouter([
@@ -23,18 +26,7 @@ export const router = createBrowserRouter([
 
             {
                 path: "men",
-                children: [
-                    {
-                        index: true,
-                        element: <Men />,
-                    },
-
-                    {
-                        path: "product/:product-id",
-                        element: <Product />
-                    }
-                ]
-                
+                element: <Men />,
             },
 
             {
@@ -44,9 +36,24 @@ export const router = createBrowserRouter([
             },
 
             {
+                path: "product/:productId",
+                element: <Product />
+            },
+
+            {
                 path: "/cart",
                 element: <Cart />
-            }
+            },
+
+            {
+                path: "checkout",
+                element: <Checkout />
+            },
+
+            {
+                path: "payment/return",
+                element: <PaymentReturn />
+            },
         ]
     },
 
@@ -54,10 +61,10 @@ export const router = createBrowserRouter([
         path: "/admin",
         element: <AdminLayout />,
         children: [
-            {
-                index: true,
-                element: <NewProduct />
-            }
+            { index: true, element: <Products /> },
+            { path: "products", element: <Products /> },
+            { path: "products/new", element: <NewProduct /> },
+            { path: "products/:productId/edit", element: <NewProduct /> },
         ]
     },
     {
