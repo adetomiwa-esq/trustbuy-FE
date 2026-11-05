@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 interface SliderProps {
-  items: {img: string, price: string, description: string, id: number}[];
+  items: {img: string, price: string, description: string, id: number | string}[];
   itemsPerSlide?: number;
 }
 
@@ -86,7 +86,7 @@ export default function Slider({
                 style={{ width: `${slideWidth}%` }}
               >
                 {/* {renderItem(item, index)} */}
-                <Link to="" className="card">
+                <Link to={`/product/${item.id}`} className="card">
                   <img src={item.img} alt="brand" className="brand" />
                   <p className="desc">
                     {

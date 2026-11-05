@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import { FaRegHeart, FaRegUser } from 'react-icons/fa';
 import { IoBagOutline } from 'react-icons/io5';
 import Button from '../Button/Button';
+import { useAppSelector } from '../../hooks/redux';
+import { selectCartCount } from '../../features/cart/selectors';
 
 function Navbar() {
+  const cartCount = useAppSelector(selectCartCount);
   return (
     <header id="header">
         <nav className="navbar">
@@ -24,7 +27,7 @@ function Navbar() {
                 <div className="icons">
                     <i><FaRegUser /></i>
                     <i><FaRegHeart /></i>
-                    <i><IoBagOutline /></i>
+                    <Link to="/cart" aria-label="Shopping cart" className="cart-nav-icon"><IoBagOutline />{cartCount > 0 && <span>{cartCount}</span>}</Link>
                 </div>
             </div>
         </nav>

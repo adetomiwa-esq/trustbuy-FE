@@ -37,3 +37,34 @@
         }
     }
 }
+
+#admin-aside {
+    display:flex;
+    flex-direction:column;
+    flex-shrink:0;
+}
+
+#admin-aside .sidebar-top {
+    padding:25px 20px 12px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+
+#admin-aside .sidebar-top strong {
+    font-size:20px;
+    letter-spacing:1px;
+}
+
+#admin-aside .sidebar-top span {
+    color:#c5c5ef;
+    font-size:12px;
+}
+
+#admin-aside .link {
+    color:#fff;
+}
+
+#admin-aside .link.active {
+    background:#3030bd;
+}

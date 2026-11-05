@@ -86,3 +86,24 @@
         }
     }
 }
+.cart-nav-icon {
+    position:relative;
+    display:inline-flex;
+    color:inherit;
+    align-items:center;
+    text-decoration:none;
+}
+
+.cart-nav-icon span {
+    position:absolute;
+    top:-9px;
+    right:-10px;
+    background:#080879;
+    color:#fff;
+    border-radius:50%;
+    min-width:17px;
+    height:17px;
+    display:grid;
+    place-items:center;
+    font-size:10px;
+}
