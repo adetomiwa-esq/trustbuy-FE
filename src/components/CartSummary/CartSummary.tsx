@@ -1,4 +1,5 @@
 import { formatCurrency } from "../../utils/currency";
+import { Link } from "react-router-dom";
 
 interface Props {
   subtotal: number;
@@ -69,11 +70,7 @@ const CartSummary = ({
 
       </div>
 
-      <button>
-
-        Proceed to Checkout
-
-      </button>
+      <Link className="checkout-link" to="/checkout">Proceed to Checkout</Link>
 
     </aside>
 
