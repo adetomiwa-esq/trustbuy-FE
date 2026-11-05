@@ -1,11 +1,6 @@
-export const formatCurrency = (amount: number) => {
-
-    return new Intl.NumberFormat("en-NG", {
-
-        style: "currency",
-
-        currency: "NGN",
-
-    }).format(amount / 100);
-
-};
+export const formatCurrency = (amount: number) =>
+  new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    maximumFractionDigits: 2,
+  }).format(amount);
