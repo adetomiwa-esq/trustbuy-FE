@@ -1,56 +1,43 @@
 import {} from 'react'
 import "./AdminSidebar.scss"
-import { ChartColumnStacked, House, ScrollText, ShoppingCart, SquareCheckBig, User } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { House, LogOut, ShoppingCart, SquareCheckBig, User } from 'lucide-react'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function AdminSidebar() {
+    const navigate = useNavigate();
+    const logout = () => { localStorage.removeItem("user"); navigate("/login"); };
   return (
     <aside id="admin-aside">
-        <div className="sidebar-top"></div>
-
+        <div className="sidebar-top">
+            <strong>TRUST-BUY</strong><span>Management</span>
+        </div>
+        
         <ul className="link-list">
             <li className="link-box">
-                <div className="link">
-                    <House className='icon' />
-                    <span>Dashboard</span>
-                </div>
-            </li>
-
-            <li className="link-box">
-                <div className="link">
-                    <ShoppingCart className='icon' />
-                    <span>Orders</span>
-                </div>
-            </li>
-
-            <li className="link-box">
-                <NavLink to="/admin" className="link">
-                    <SquareCheckBig className='icon' />
-                    <span>Products</span>
+                <NavLink to="/admin" end className="link">
+                    <House className="icon" /><span>Overview</span>
                 </NavLink>
             </li>
 
             <li className="link-box">
-                <div className="link">
-                    <ChartColumnStacked className='icon' />
-                    <span>Categories</span>
-                </div>
+                <NavLink to="/admin/products" className="link">
+                    <SquareCheckBig className="icon" /><span>Products</span>
+                </NavLink>
             </li>
 
             <li className="link-box">
-                <div className="link">
-                    <User className='icon' />
-                    <span>Customers</span>
-                </div>
+                <NavLink to="/admin/orders" className="link">
+                    <ShoppingCart className="icon" /><span>Orders</span>
+                </NavLink>
             </li>
 
             <li className="link-box">
-                <div className="link">
-                    <ScrollText className='icon' />
-                    <span>Reports</span>
-                </div>
+                <NavLink to="/admin/customers" className="link">
+                    <User className="icon" /><span>Customers</span>
+                </NavLink>
             </li>
         </ul>
+        <button className="admin-logout" onClick={logout}><LogOut size={17} /> Sign out</button>
     </aside>
   )
 }
